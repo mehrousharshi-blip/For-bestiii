@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Bestie 💌</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --pink: #e783a2;
+  --light: #fff2f6;
+  --purple: #eee5ff;
+  --text: #704356;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #fff9f7;
+  color: var(--text);
+  font-family: Poppins, sans-serif;
+}
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 15px;
+  background: #fff9f7ed;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #f5dce5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 11px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+section {
+  max-width: 950px;
+  margin: auto;
+  padding: 65px 6%;
+  text-align: center;
+  scroll-margin-top: 65px;
+}
+
+.hero {
+  max-width: none;
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(#432b4255, #432b4255),
+    url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=1600&q=85')
+    center/cover;
+}
+
+.hero .eyebrow { color: #ffe0ea; }
+
+.eyebrow {
+  color: #bd6f8c;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 10px;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: clamp(43px, 10vw, 78px);
+  line-height: 1.12;
+  margin: 15px 0;
+}
+
+h1 em { color: #ffd2e1; }
+
+h2 { font-size: clamp(29px, 6vw, 40px); }
+
+p { line-height: 1.9; }
+
+.intro { max-width: 470px; }
+
+button {
+  padding: 13px 21px;
+  border: none;
+  border-radius: 30px;
+  background: var(--pink);
+  color: white;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(.97);
+}
+
+.light-btn {
+  background: white;
+  color: var(--text);
+  border: 1px solid #f1d4df;
+}
+
+.hero button { margin-top: 18px; }
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 22px;
+  border: 1px solid #f2dce5;
+  box-shadow: 0 10px 35px #a65e7610;
+}
+
+.big-heart {
+  font-size: 50px;
+  animation: beat 1.5s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.12); }
+}
+
+.message {
+  max-width: 560px;
+  min-height: 140px;
+  display: grid;
+  place-items: center;
+  margin: 25px auto;
+  padding: 28px;
+  border-radius: 22px;
+  background: var(--light);
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 25px 0;
+}
+
+.photo {
+  position: relative;
+  overflow: hidden;
+  border: 7px solid white;
+  background: var(--purple);
+  box-shadow: 0 5px 20px #70435612;
+  border-radius: 8px;
+  transform: rotate(-1deg);
+}
+
+.photo:nth-child(even) { transform: rotate(1deg); }
+
+.photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  transition: .4s;
+}
+
+.photo:hover img { transform: scale(1.04); }
+
+.caption {
+  padding: 10px 4px;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+}
+
+.roast {
+  max-width: 500px;
+  margin: 24px auto;
+  padding: 25px;
+  border-radius: 20px;
+  background: var(--purple);
+  font-size: 16px;
+}
+
+.miss-card {
+  background: linear-gradient(145deg, #ffe9f0, #eee5ff, #fff8ee);
+  border-radius: 28px;
+  padding: 35px 20px;
+  border: 1px solid #f1d3e0;
+}
+
+.letter {
+  background: #ffffffd9;
+  padding: 24px;
+  margin: 22px auto;
+  max-width: 490px;
+  border-radius: 18px;
+  line-height: 2;
+  animation: appear .4s ease;
+}
+
+.hidden { display: none !important; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gift {
+  font-size: 85px;
+  cursor: pointer;
+  display: inline-block;
+  transition: .3s;
+}
+
+.gift:hover { transform: rotate(-8deg) scale(1.1); }
+
+.music-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  max-width: 480px;
+  margin: 25px auto;
+  text-align: left;
+}
+
+.music-icon { font-size: 34px; }
+
+.small {
+  font-size: 11px;
+  opacity: .7;
+}
+
+.heart-float {
+  position: fixed;
+  z-index: 20;
+  bottom: -30px;
+  pointer-events: none;
+  animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-105vh) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+footer {
+  background: #f8e4ed;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+footer p {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+}
+
+@media(min-width:650px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media(max-width:430px) {
+  nav { padding: 12px 9px; }
+  .logo { font-size: 15px; }
+  .links { gap: 8px; }
+  nav a { font-size: 10px; }
+  section { padding: 50px 5%; }
+  .card { padding: 19px 13px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">♡ bestie diary</div>
+  <div class="links">
+    <a href="#messages">Messages</a>
+    <a href="#gallery">Photos</a>
+    <a href="#missyou">Miss You</a>
+    <a href="#surprise">Gift 🎁</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section class="hero" id="home">
+  <div style="font-size:45px">🎀</div>
+  <p class="eyebrow">a little corner just for you</p>
+  <h1>My Favorite<br><em>Human ♡</em></h1>
+  <p class="intro">
+    No birthday. No special occasion.
+    I just wanted to remind you how special you are to me.
+  </p>
+  <a href="#messages">
+    <button>There's something for you 💌</button>
+  </a>
+  <p>♡ forever my bestie ♡</p>
+</section>
+
+<!-- MESSAGES -->
+<section id="messages">
+  <p class="eyebrow">little reminders</p>
+  <h2>Just so you know... 💗</h2>
+  <div class="big-heart">🩷</div>
+
+  <div class="message" id="message">
+    You're not just my bestie. You're my favorite kind of person.
+  </div>
+
+  <button onclick="nextMessage()">Read another ♡</button>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <p class="eyebrow">our little memories</p>
+  <h2>Our Photo Diary 📸</h2>
+  <p>Different moments, same crazy friendship.</p>
+
+  <div class="grid">
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Friends together">
+      <div class="caption">My favorite people ♡</div>
+    </div>
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80" alt="Friendship memories">
+      <div class="caption">Little moments 🌷</div>
+    </div>
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80" alt="Happy memories">
+      <div class="caption">Better together 🎀</div>
+    </div>
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Happy day">
+      <div class="caption">Pretty little memories 💗</div>
+    </div>
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=600&q=80" alt="Flowers">
+      <div class="caption">Flowers for you 🌸</div>
+    </div>
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=600&q=80" alt="Sunset">
+      <div class="caption">Always a little sunshine ☀️</div>
+    </div>
+  </div>
+
+  <p class="small">
+    Replace these sample pictures with your own bestie photos whenever you want.
+  </p>
+</section>
+
+<!-- MISS YOU -->
+<section id="missyou">
+  <div class="miss-card">
+    <p class="eyebrow">a little confession 💌</p>
+    <div class="big-heart">🥹💗</div>
+    <h2>Miss You, Bestie!</h2>
+    <p>Some days, I just wish you were here. ♡</p>
+
+    <button onclick="toggleLetter()">Open my little letter 💌</button>
+
+    <div class="letter hidden" id="letter">
+      <h2 style="font-size:29px">Hey, you! 🧸</h2>
+
+      I miss our random talks, our silly jokes,
+      our endless gossip and laughing at absolutely nothing. 😭💗
+
+      <p>
+        I miss the little moments that never seemed special
+        until I wished I could live them all over again.
+      </p>
+
+      <p>
+        Even when we're busy doing our own things,
+        you still cross my mind in the most random moments.
+      </p>
+
+      <p>
+        I hope you never forget how much you mean to me.
+        You are one of those people I never want to lose.
+      </p>
+
+      <p>
+        If I could send you one thing right now,
+        it would be the biggest hug ever. 🫂
+      </p>
+
+      <h3>Missing you a little extra today. ♡</h3>
+    </div>
+  </div>
+</section>
+
+<!-- ROASTS -->
+<section id="roasts">
+  <p class="eyebrow">lovingly disrespectful</p>
+  <h2>Roast My Bestie 😂</h2>
+  <p>Because best friends don't let each other be normal.</p>
+
+  <div class="roast" id="roast">
+    You're not lazy. You're permanently on energy-saving mode. 😭
+  </div>
+
+  <button class="light-btn" onclick="nextRoast()">
+    Another roast 💀
+  </button>
+</section>
+
+<!-- SURPRISE -->
+<section id="surprise">
+  <p class="eyebrow">pssst... just for you</p>
+  <h2>A Little Surprise 🎁</h2>
+  <p>There's a tiny secret inside this gift.</p>
+
+  <div class="gift" onclick="openGift()">🎁</div>
+  <br>
+  <button onclick="openGift()">Open your gift ♡</button>
+
+  <div id="giftMessage" class="letter hidden">
+    <div style="font-size:42px">💗🌷🫶🏻</div>
+    <h2>You're My Person!</h2>
+    <p>
+      Thank you for listening to my nonsense,
+      being part of my happiest memories,
+      and making ordinary days feel special.
+    </p>
+    <p>
+      You don't need to be perfect.
+      You don't need to be happy every day.
+      You can always be your real self with me.
+    </p>
+    <h3>I'm so lucky to have you. ♡</h3>
+    <button class="light-btn" onclick="makeHearts()">Send more love 💕</button>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music">
+  <p class="eyebrow">a little soundtrack</p>
+  <h2>Our Little World 🎵</h2>
+
+  <div class="card music-card">
+    <div class="music-icon">🎧</div>
+    <div style="flex:1">
+      <strong>Little Daydream</strong>
+      <div class="small" id="musicStatus">An original tiny melody</div>
+    </div>
+    <button id="musicBtn" onclick="toggleMusic()">▶ Play</button>
+  </div>
+
+  <p class="small">
+    Tap play to hear a little melody made by your browser.
+  </p>
+</section>
+
+<footer>
+  <div style="font-size:35px">💌</div>
+  <p>Some friendships feel like home.</p>
+  <div>And you're one of mine. ♡</div>
+  <p style="font-size:14px">Forever & Always 🎀</p>
+  <button class="light-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    Back to the beginning ↑
+  </button>
+</footer>
+
+<script>
+const messages = [
+  "You're not just my bestie. You're my favorite kind of person. ♡",
+  "Some people make life better just by existing. That's you. 🩷",
+  "Thank you for understanding my silence and surviving my drama. 😭",
+  "I hope life gives you every little happiness you deserve. 🌷",
+  "No matter how busy life gets, you'll always be special to me. 💌",
+  "You're my partner in nonsense and my favorite person to talk to. 😂",
+  "If I could choose my bestie all over again, I'd still choose you. ♡",
+  "You make the ordinary days feel like memories worth keeping. 🧸"
+];
+
+let msgIndex = 0;
+
+function nextMessage() {
+  msgIndex = (msgIndex + 1) % messages.length;
+  document.getElementById("message").textContent = messages[msgIndex];
+}
+
+const roasts = [
+  "You're not lazy. You're permanently on energy-saving mode. 😭",
+  "You say 'five minutes' like time doesn't exist. 💀",
+  "Your overthinking deserves its own award. 🏆",
+  "You're 50% drama, 50% snacks, and 100% my headache. 😂",
+  "Your brain has 47 tabs open and music playing somewhere.",
+  "You give amazing advice and then ignore your own. Iconic. 😭",
+  "You're annoying. Unfortunately, you're also my favorite. 💗",
+  "If unseriousness were a career, you'd be the CEO. 👑"
+];
+
+let roastIndex = 0;
+
+function nextRoast() {
+  roastIndex = (roastIndex + 1) % roasts.length;
+  document.getElementById("roast").textContent = roasts[roastIndex];
+}
+
+function toggleLetter() {
+  document.getElementById("letter").classList.toggle("hidden");
+  if (!document.getElementById("letter").classList.contains("hidden")) {
+    makeHearts();
+  }
+}
+
+function openGift() {
+  document.getElementById("giftMessage").classList.remove("hidden");
+  makeHearts();
+}
+
+function makeHearts() {
+  const symbols = ["💗", "💕", "🩷", "💖", "♡", "🌷"];
+
+  for (let i = 0; i < 22; i++) {
+    const heart = document.createElement("span");
+    heart.className = "heart-float";
+    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    heart.style.left = Math.random() * 96 + "vw";
+    heart.style.animationDelay = Math.random() * 1.5 + "s";
+    heart.style.fontSize = (15 + Math.random() * 22) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+  }
+}
+
+// Original browser-generated melody: no external audio file needed.
+let audio = null;
+let playing = false;
+let timer = null;
+let note = 0;
+
+const melody = [
+  [261.63, 300], [329.63, 300], [392.00, 450],
+  [349.23, 300], [329.63, 300], [293.66, 450],
+  [261.63, 300], [293.66, 300], [329.63, 450],
+  [392.00, 300], [349.23, 300], [261.63, 550]
+];
+
+function playNote() {
+  if (!playing || !audio) return;
+
+  const [frequency, duration] = melody[note];
+  const osc = audio.createOscillator();
+  const gain = audio.createGain();
+
+  osc.type = "sine";
+  osc.frequency.value = frequency;
+  gain.gain.setValueAtTime(0.001, audio.currentTime);
+  gain.gain.linearRampToValueAtTime(0.07, audio.currentTime + 0.04);
+  gain.gain.exponentialRampToValueAtTime(
+    0.001, audio.currentTime + duration / 1000
+  );
+
+  osc.connect(gain);
+  gain.connect(audio.destination);
+  osc.start();
+  osc.stop(audio.currentTime + duration / 1000 + 0.02);
+
+  note = (note + 1) % melody.length;
+  timer = setTimeout(playNote, duration + 60);
+}
+
+async function toggleMusic() {
+  const btn = document.getElementById("musicBtn");
+  const status = document.getElementById("musicStatus");
+
+  if (playing) {
+    playing = false;
+    clearTimeout(timer);
+    if (audio) await audio.suspend();
+    btn.textContent = "▶ Play";
+    status.textContent = "Melody paused ♡";
+    return;
+  }
+
+  try {
+    const Audio = window.AudioContext || window.webkitAudioContext;
+
+    if (!Audio) {
+      status.textContent = "Audio isn't supported in this browser.";
+      return;
+    }
+
+    if (!audio) audio = new Audio();
+    await audio.resume();
+
+    playing = true;
+    btn.textContent = "Ⅱ Pause";
+    status.textContent = "Playing our little melody 🎵";
+    playNote();
+  } catch (e) {
+    status.textContent = "Please tap play again.";
+  }
+}
+</script>
+
+</body>
+</html>
